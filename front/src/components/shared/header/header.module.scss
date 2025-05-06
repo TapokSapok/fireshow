@@ -1,0 +1,21 @@
+.header {
+	background: rgba(1, 1, 1, 0.5);
+	padding: 15px;
+	height: 70px;
+	display: flex;
+	align-items: center;
+	left: 0;
+	right: 0;
+	position: fixed;
+	z-index: 3;
+
+	.logo {
+		.logo_image {
+			width: 40px;
+		}
+
+		.title {
+			font-size: 2rem;
+		}
+	}
+}
