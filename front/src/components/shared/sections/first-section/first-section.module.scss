@@ -51,6 +51,10 @@
 		margin-top: 120px;
 		width: 80%;
 
+		@include respond-down(sm) {
+			width: 95%;
+		}
+
 		.banner_wrapper {
 			width: 100%;
 			aspect-ratio: 16 / 9;
