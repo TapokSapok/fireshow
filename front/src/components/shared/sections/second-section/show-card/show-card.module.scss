@@ -10,6 +10,7 @@
 	@include respond-down(xl) {
 		display: block;
 		padding-right: 12px;
+		margin-top: 50px;
 	}
 
 	@include respond-down(sm) {
@@ -24,7 +25,7 @@
 		@include respond-down(xl) {
 			margin: 0 auto;
 			width: 80%;
-			margin-bottom: 12px;
+			margin-bottom: 50px;
 		}
 
 		@include respond-down(md) {
@@ -40,6 +41,10 @@
 
 			@include respond-down(xl) {
 				margin: auto 20px;
+			}
+
+			@include respond-down(sm) {
+				display: none;
 			}
 
 			.arrow_image {
@@ -70,12 +75,34 @@
 			padding: 24px 0;
 			gap: 24px;
 
-			.title {
-				font-size: 3rem;
-				animation: fadeInOne 0.5s ease;
+			@include respond-down(sm) {
+				padding: 0 30px;
+			}
 
-				@include respond-down(xl) {
-					text-align: center;
+			.menu_header {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				// padding: 0 30px;
+
+				.arrow {
+					display: none;
+
+					@include respond-down(sm) {
+						display: block;
+					}
+
+					.arrow_image {
+					}
+				}
+
+				.title {
+					font-size: 3rem;
+					animation: fadeInOne 0.5s ease;
+
+					@include respond-down(xl) {
+						text-align: center;
+					}
 				}
 			}
 
@@ -116,6 +143,7 @@
 					padding: 10px;
 					background: $third_color;
 					border: none;
+					color: $main_color;
 					border-radius: 4px;
 					cursor: pointer;
 					transition: 0.3s;

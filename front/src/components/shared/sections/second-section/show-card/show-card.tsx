@@ -30,8 +30,20 @@ export default function ShowCard({ card, setShowIndex, showIndex, openFormModal 
 					)}
 				</div>
 				<div className={styles.menu}>
-					<div className={styles.title} key={card.title}>
-						{card.title}
+					<div className={styles.menu_header}>
+						{showIndex > 0 && (
+							<div className={styles.arrow} onClick={() => switchShow(false)}>
+								<img className={styles.arrow_image} src={arrowLeft} data-side='left' />
+							</div>
+						)}
+						<div className={styles.title} key={card.title}>
+							{card.title}
+						</div>
+						{showCards[showIndex + 1] && (
+							<div className={styles.arrow} onClick={() => switchShow(true)}>
+								<img className={styles.arrow_image} src={arrowRight} data-side='right' />
+							</div>
+						)}
 					</div>
 					<div className={styles.description} key={showIndex}>
 						{card.description}

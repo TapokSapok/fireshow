@@ -4,7 +4,7 @@
 	padding-bottom: 190px;
 
 	@include respond-down(xl) {
-		padding-bottom: 0;
+		padding-bottom: 0px;
 	}
 
 	.title {
@@ -19,6 +19,7 @@
 
 		@include respond-down(md) {
 			font-size: 2rem;
+			padding-top: 70px;
 		}
 
 		@include respond-down(s) {
@@ -36,7 +37,11 @@
 			width: 700px;
 
 			@include respond-down(xl) {
-				width: 100%;
+				width: 50%;
+			}
+
+			@include respond-down(md) {
+				width: 70%;
 			}
 		}
 	}
