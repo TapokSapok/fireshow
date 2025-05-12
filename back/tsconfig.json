@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"declaration": true,
+		"removeComments": true,
+		"outDir": "dist",
+		"esModuleInterop": true,
+		"rootDir": ".",
+		"skipLibCheck": true,
+		"strictNullChecks": true
+	},
+	"include": ["src"]
+}
