@@ -1,5 +1,8 @@
 .section {
 	display: flex;
-	height: 100vh;
 	width: 100%;
+
+	@include respond-down(xl) {
+		// padding-bottom: 140px;
+	}
 }

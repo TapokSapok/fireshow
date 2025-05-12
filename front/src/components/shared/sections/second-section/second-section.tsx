@@ -5,7 +5,7 @@ import { showCards } from '../../../../data/show-cards';
 import FormModal from '../../modals/form-modal/form-modal';
 
 export default function SecondSection() {
-	const [showIndex, setShowIndex] = useState<number>(0);
+	const [showIndex, setShowIndex] = useState<number>(1);
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 
 	return (

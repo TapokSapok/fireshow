@@ -11,7 +11,6 @@ export default function FirstSection() {
 	const [bannerIndex, setBannerIndex] = useState(0);
 
 	useEffect(() => {
-		console.log(bannerIndex, bannerIndex >= banners.length - 1);
 		setTimeout(() => {
 			if (bannerIndex >= banners.length - 1) setBannerIndex(0);
 			else setBannerIndex(p => p + 1);
@@ -26,17 +25,20 @@ export default function FirstSection() {
 			</div>
 
 			<div className={styles.banner}>
-				{banners.map((banner, i) => (
-					<motion.img
-						key={i}
-						src={banner}
-						className={styles.banner_image}
-						initial={{ opacity: 0 }} // , transform: 'translate(100px)'
-						animate={{ opacity: bannerIndex === i ? 1 : 0 }} // bannerIndex === i ? 'translate(0)' : 'translate(-100px)' // , transform: 'translate(0)'
-						exit={{ opacity: 0 }} // , transform: `translate(-100px)`
-						transition={{ duration: '0.4' }}
-					/>
-				))}
+				<div className={styles.banner_wrapper}>
+					{banners.map((banner, i) => (
+						<motion.img
+							key={i}
+							src={banner}
+							data-enabled={bannerIndex === i}
+							className={styles.banner_image}
+							initial={{ opacity: 0 }} // , transform: 'translate(100px)'
+							animate={{ opacity: bannerIndex === i ? 1 : 0 }} // bannerIndex === i ? 'translate(0)' : 'translate(-100px)' // , transform: 'translate(0)'
+							exit={{ opacity: 0 }} // , transform: `translate(-100px)`
+							transition={{ duration: '0.4' }}
+						/>
+					))}
+				</div>
 			</div>
 		</section>
 	);

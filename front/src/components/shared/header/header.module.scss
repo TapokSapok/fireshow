@@ -4,6 +4,7 @@
 	height: 70px;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	left: 0;
 	right: 0;
 	position: fixed;
@@ -16,6 +17,36 @@
 
 		.title {
 			font-size: 2rem;
+		}
+	}
+
+	.links {
+		display: flex;
+		gap: 10px;
+		height: 100%;
+		align-items: center;
+
+		a {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			font-size: 1.3rem;
+
+			span {
+				@include respond-down(md) {
+					display: none;
+				}
+			}
+		}
+
+		.separator {
+			height: 80%;
+			width: 1px;
+			background: $second_color;
+		}
+
+		.link_image {
+			width: 35px;
 		}
 	}
 }

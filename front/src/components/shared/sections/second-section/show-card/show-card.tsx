@@ -2,6 +2,7 @@ import styles from './show-card.module.scss';
 import arrowLeft from '@/assets/svg/arrow-left.svg';
 import arrowRight from '@/assets/svg/arrow-right.svg';
 import { IShowCard, showCards } from '../../../../../data/show-cards';
+import ReactPlayer from 'react-player';
 
 interface IProps {
 	card: IShowCard;
@@ -57,7 +58,15 @@ export default function ShowCard({ card, setShowIndex, showIndex, openFormModal 
 			</div>
 			<div className={styles.right}>
 				<div className={styles.video} key={showIndex}>
-					{/* <iframe src={card.videoUrl} frameBorder='0' allow='clipboard-write; autoplay' allowFullScreen></iframe> */}
+					<ReactPlayer
+						url={card.videoUrl}
+						controls
+						width='100%'
+						height='100%'
+						config={{ file: { attributes: { preload: 'metadata' } } }}
+						light={'/shows/preload-solo.png'}
+						playing={true}
+					/>
 				</div>
 			</div>
 		</div>

@@ -1,3 +1,30 @@
+@use 'sass:map';
+
 $main_color: #060709;
 $second_color: #3a4342;
 $third_color: #bfcecb;
+
+$breakpoints: (
+	xs: 0,
+	s: 425,
+	sm: 576px,
+	md: 768px,
+	lg: 1024px,
+	xl: 1280px,
+	xxl: 1536px,
+);
+
+@function breakpoint($key) {
+	@return map.get($breakpoints, $key);
+}
+
+@mixin respond-down($key) {
+	$size: breakpoint($key);
+	@if $size != null {
+		@media (max-width: $size) {
+			@content;
+		}
+	} @else {
+		@warn "Нет брейкпоинта: #{$key}";
+	}
+}
