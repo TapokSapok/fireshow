@@ -12,13 +12,15 @@ export default defineConfig({
 	css: {
 		preprocessorOptions: {
 			scss: {
-				// includePaths: ['./src'],
 				additionalData: `@use '@/app/variables' as *;`,
 			},
 		},
 	},
 	server: {
 		//host: '185.128.104.205',
-		port: 3001,
+		port: 3000,
+	},
+	preview: {
+		port: 3000,
 	},
 });

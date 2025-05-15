@@ -143,6 +143,7 @@
 				display: none;
 				border-radius: 10px;
 				filter: brightness(80%);
+				user-select: none;
 
 				&[data-enabled='true'] {
 					display: block;
