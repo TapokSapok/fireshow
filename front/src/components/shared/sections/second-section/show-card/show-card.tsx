@@ -72,7 +72,7 @@ export default function ShowCard({ card, setShowIndex, showIndex, openFormModal 
 				<div className={styles.video} key={showIndex}>
 					<ReactPlayer
 						url={card.videoUrl}
-						controls
+						controls //
 						width='100%'
 						height='100%'
 						config={{ file: { attributes: { preload: 'metadata' } } }}

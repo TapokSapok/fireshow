@@ -17,6 +17,22 @@
 
 		.title {
 			font-size: 2rem;
+			user-select: none;
+			display: flex;
+			gap: 5px;
+			transition: 0.3s;
+
+			.arrow {
+				opacity: 0;
+				transition: 0.3s;
+			}
+
+			&:hover {
+				color: $third_color;
+				.arrow {
+					opacity: 70;
+				}
+			}
 		}
 	}
 

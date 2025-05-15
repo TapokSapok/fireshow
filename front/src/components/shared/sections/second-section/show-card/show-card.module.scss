@@ -102,7 +102,7 @@
 
 				.title {
 					font-size: 3rem;
-					animation: fadeInOne 0.5s ease;
+					animation: fadeInOne 1s ease;
 
 					@include respond-down(xl) {
 						text-align: center;
@@ -115,7 +115,7 @@
 				transition: 0.3s;
 				font-size: 1.3rem;
 				flex-grow: 1;
-				animation: fadeInTwo 0.5s ease;
+				animation: fadeInTwo 1s ease;
 
 				&::-webkit-scrollbar {
 					background: $main_color;
@@ -139,7 +139,7 @@
 					font-size: 2rem;
 
 					.price_number {
-						animation: fadeInOne 0.5s ease;
+						animation: fadeInOne 1s ease;
 					}
 				}
 
@@ -209,4 +209,8 @@
 	to {
 		opacity: 100%;
 	}
+}
+
+:global(.react-player__shadow > div) {
+	display: none !important;
 }
