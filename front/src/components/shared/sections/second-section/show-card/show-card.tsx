@@ -69,6 +69,7 @@ export default function ShowCard({ card, setShowIndex, showIndex, openFormModal 
 				</div>
 			</div>
 			<div className={styles.right}>
+				<h1 className={styles.title}>{card.title}</h1>
 				<div className={styles.video} key={showIndex}>
 					<ReactPlayer
 						url={card.videoUrl}
@@ -76,7 +77,7 @@ export default function ShowCard({ card, setShowIndex, showIndex, openFormModal 
 						width='100%'
 						height='100%'
 						config={{ file: { attributes: { preload: 'metadata' } } }}
-						light={'/shows/preload-solo.png'}
+						light={card.preloadUrl}
 						playing={true}
 					/>
 				</div>
