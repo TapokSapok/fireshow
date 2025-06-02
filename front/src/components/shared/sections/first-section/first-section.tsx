@@ -35,14 +35,21 @@ export default function FirstSection() {
 
 	return (
 		<section className={styles.section}>
-			<div className={styles.section_wrapper}>
+			{/* <div className={styles.info_wrapper}>
 				<h1 className={styles.title}>Ваш праздник достоин лучшего, и мы воплотим это в реальность.</h1>
 				<div className={styles.logo}>
 					<img src={logo} alt='' className={styles.logo_image} />
 				</div>
-			</div>
+			</div> */}
 
 			<div className={styles.banner}>
+				<div className={styles.info_wrapper}>
+					<h1 className={styles.title}>Ваш праздник достоин лучшего, и мы воплотим это в реальность.</h1>
+					<div className={styles.logo}>
+						<img src={logo} alt='' className={styles.logo_image} />
+					</div>
+				</div>
+
 				<div className={styles.arrows}>
 					<div className={styles.arrow} onClick={() => switchBanner(false)}>
 						<div className={styles.arrow}>

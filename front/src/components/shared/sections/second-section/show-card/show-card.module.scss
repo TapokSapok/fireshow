@@ -14,6 +14,7 @@
 	@include respond-down(xl) {
 		display: block;
 		padding-right: 12px;
+		margin: 0 auto;
 		margin-top: 80px;
 	}
 
@@ -110,6 +111,14 @@
 				}
 			}
 
+			.video {
+				display: none;
+
+				@include respond-down(xl) {
+					display: block;
+				}
+			}
+
 			.description {
 				overflow-y: auto;
 				transition: 0.3s;
@@ -164,41 +173,35 @@
 	.right {
 		width: 100%;
 		padding: 12px;
-
-		.title {
-			text-align: center;
-			padding: 12px;
-			font-size: 2rem;
-			font-weight: 500;
-			display: none;
-
-			@include respond-down(sm) {
-				display: block;
-			}
-		}
+		display: flex;
+		align-items: center;
 
 		.video {
-			// position: relative;
-			width: 100%;
-			// padding-top: 56.25%;
-			aspect-ratio: 16 / 9;
-
-			border-radius: 10px;
-			border: 1px solid $second_color;
-
-			div {
-				border-radius: 10px;
-			}
-
-			video {
-				height: 100%;
-				width: 100%;
-
-				border-radius: 10px;
-				outline: none;
-				object-fit: cover !important;
+			@include respond-down(xl) {
+				display: none;
 			}
 		}
+	}
+}
+
+.video {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+
+	border-radius: 10px;
+	border: 1px solid $second_color;
+
+	div {
+		border-radius: 10px;
+	}
+
+	video {
+		height: 100%;
+		width: 100%;
+
+		border-radius: 10px;
+		outline: none;
+		object-fit: cover !important;
 	}
 }
 

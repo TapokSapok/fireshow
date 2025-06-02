@@ -2,7 +2,7 @@ import styles from './show-card.module.scss';
 import arrowLeft from '@/assets/svg/arrow-left.svg';
 import arrowRight from '@/assets/svg/arrow-right.svg';
 import { IShowCard, showCards } from '../../../../../data/show-cards';
-import ReactPlayer from 'react-player';
+import VideoPlayer from '../video-player/video-player';
 
 interface IProps {
 	card: IShowCard;
@@ -45,6 +45,9 @@ export default function ShowCard({ card, setShowIndex, showIndex, openFormModal 
 							</div>
 						)}
 					</div>
+					<div className={styles.video}>
+						<VideoPlayer preloadUrl={card.preloadUrl} videoUrl={card.videoUrl} />
+					</div>
 					<div className={styles.description} key={showIndex}>
 						{card.description}
 					</div>
@@ -69,17 +72,8 @@ export default function ShowCard({ card, setShowIndex, showIndex, openFormModal 
 				</div>
 			</div>
 			<div className={styles.right}>
-				<h1 className={styles.title}>{card.title}</h1>
 				<div className={styles.video} key={showIndex}>
-					<ReactPlayer
-						url={card.videoUrl}
-						controls //
-						width='100%'
-						height='100%'
-						config={{ file: { attributes: { preload: 'metadata' } } }}
-						light={card.preloadUrl}
-						playing={true}
-					/>
+					<VideoPlayer preloadUrl={card.preloadUrl} videoUrl={card.videoUrl} />
 				</div>
 			</div>
 		</div>

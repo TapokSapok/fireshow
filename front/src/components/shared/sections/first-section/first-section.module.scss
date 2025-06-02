@@ -1,77 +1,97 @@
 .section {
-	padding-top: 70px;
+	padding: 0 44px;
 	padding-bottom: 190px;
+
+	position: relative;
+	left: 0;
+	top: 0;
+	z-index: 0;
+
+	margin: 0 auto;
+	width: 100%;
 
 	@include respond-down(xl) {
 		padding-bottom: 0px;
+		padding: 0 24px;
 	}
 
-	.section_wrapper {
-		position: absolute;
-		z-index: 1;
-		width: 100%;
-		pointer-events: none;
-
-		.title {
-			padding-top: 150px;
-			text-align: center;
-			font-size: 3rem;
-
-			@include respond-down(xl) {
-				width: 80vw;
-				margin: 0 auto;
-				padding-top: 250px;
-			}
-			@include respond-down(lg) {
-				padding-top: 150px;
-			}
-
-			@include respond-down(md) {
-				font-size: 2rem;
-				padding-top: 70px;
-			}
-
-			@include respond-down(s) {
-				font-size: 1.2rem;
-			}
-		}
-	}
-
-	.logo {
-		display: flex;
-		justify-content: center;
-		margin-top: 50px;
-
-		@include respond-down(xl) {
-			display: none;
-		}
-
-		.logo_image {
-			margin-top: 50px;
-			width: 700px;
-
-			@include respond-down(xxl) {
-				width: 30%;
-			}
-
-			// @include respond-down(xl) {
-			// 	width: 50%;
-			// }
-
-			// @include respond-down(md) {
-			// 	width: 70%;
-			// }
-		}
+	@include respond-down(lg) {
+		padding-top: 75px;
 	}
 
 	.banner {
 		position: relative;
-		left: 0;
-		top: 0;
-		z-index: 0;
 
-		margin: 0 auto;
-		width: 100%;
+		.info_wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			aspect-ratio: 16 / 9;
+			gap: 30px;
+
+			.title {
+				font-size: 3rem;
+				text-align: center;
+
+				@include respond-down(xl) {
+					width: 80vw;
+				}
+
+				@include respond-down(md) {
+					font-size: 2rem;
+				}
+
+				@include respond-down(s) {
+					font-size: 1.2rem;
+				}
+			}
+
+			.logo {
+				display: flex;
+				justify-content: center;
+
+				.logo_image {
+					margin-top: 50px;
+					width: 700px;
+
+					@include respond-down(xxl) {
+						width: 30%;
+					}
+
+					@include respond-down(xl) {
+						display: none;
+					}
+
+					// @include respond-down(md) {
+					// 	width: 70%;
+					// }
+				}
+			}
+		}
+
+		.banner_wrapper {
+			width: 100%;
+			aspect-ratio: 16 / 9;
+			z-index: 2;
+
+			.banner_image {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+				display: none;
+				border-radius: 10px;
+				filter: brightness(80%);
+				user-select: none;
+
+				&[data-enabled='true'] {
+					display: block;
+				}
+			}
+		}
 
 		.arrows {
 			position: absolute;
@@ -128,25 +148,6 @@
 
 				&[data-current='true'] {
 					background: $second_color;
-				}
-			}
-		}
-
-		.banner_wrapper {
-			width: 100%;
-			aspect-ratio: 16 / 9;
-
-			.banner_image {
-				height: 100%;
-				width: 100%;
-				object-fit: cover;
-				display: none;
-				border-radius: 10px;
-				filter: brightness(80%);
-				user-select: none;
-
-				&[data-enabled='true'] {
-					display: block;
 				}
 			}
 		}
